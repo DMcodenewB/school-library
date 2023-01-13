@@ -44,7 +44,7 @@ create table uczen(
 );
 
 create table autor (
-    id_autora int NOT NULL,
+    id_autora int AUTO_INCREMENT NOT NULL,
     imieNazwiskoAutora VARCHAR(255) NOT NULL,
     constraint pk_id_autora primary key(id_autora)
 );
