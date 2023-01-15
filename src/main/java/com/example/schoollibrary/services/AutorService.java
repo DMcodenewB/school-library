@@ -17,10 +17,27 @@ public class AutorService {
         return autorRepository.getAll();
     }
 
-    public Autor getAutorById(int id){
+    public Autor getAuthorById(int id){
         return autorRepository.getById(id);
     }
 
-    //dokonczyc usuwanie i update
+    public int addAuthors(List<Autor> authors){
+        return autorRepository.save(authors);
+    }
 
+    public int updateImieNazwisko(int autor_id, Autor updatedAuthor) {
+        Autor autor = autorRepository.getById(autor_id);
+
+        if(autor != null){
+            autor.setImieNazwiskoAutora(updatedAuthor.getImieNazwiskoAutora());
+
+            autorRepository.update(autor);
+            return 1;
+        }
+        else return -1;
+    }
+
+    public int deleteAutor(int autor_id){
+        return autorRepository.delete(autor_id);
+    }
 }
