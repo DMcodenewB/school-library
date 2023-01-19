@@ -25,8 +25,6 @@ create table nauczyciel(
     id_uzytkownik int not null,
     imie_n varchar(50) not null,
     nazwisko_n varchar(50) not null,
-    przedmiot_glowny varchar(50) not null,
-    przedmiot_poboczny varchar(50),
     constraint pk_id_nauczyciel primary key(id_nauczyciel),
     foreign key (id_uzytkownik) references uzytkownik(id_uzytkownik)
 );
@@ -37,7 +35,6 @@ create table uczen(
     id_uzytkownik int not null,
     imie_u varchar(50) not null,
     nazwisko_u varchar(50) not null,
-    zachowanie varchar(50) not null,
     constraint pk_nr_ucznia primary key(nr_ucznia),
     foreign key (id_klasa) references klasa(id_klasa),
     foreign key (id_uzytkownik) references uzytkownik(id_uzytkownik)
