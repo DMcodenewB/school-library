@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 public class Ksiazka {
     private String isbn;
     private int id_dzial;
-    private String tytul;
     private int id_autora;
+    private String tytul;
     private String wydawnictwo;
     private int rok_wydania;
     private String okladka;
-    private boolean lektura;
+    private boolean czy_lektura;
 
 }
