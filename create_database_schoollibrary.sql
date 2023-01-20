@@ -1,3 +1,5 @@
+create database if not exists schoollibrary CHARACTER SET 'utf8mb4' collate 'utf8mb4_polish_ci';
+
 use schoollibrary;
 
 create table autor (
