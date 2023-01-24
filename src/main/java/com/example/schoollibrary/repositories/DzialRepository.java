@@ -25,8 +25,8 @@ public class DzialRepository {
     }
 
     public List<Dzial> getByNameStart(String name){
-        return jdbcTemplate.query("SELECT id_dzial, nazwa FROM dzial WHERE nazwa LIKE ?%",
-                BeanPropertyRowMapper.newInstance(Dzial.class), name);
+        return jdbcTemplate.query("SELECT id_dzial, nazwa FROM dzial WHERE nazwa LIKE ?",
+                BeanPropertyRowMapper.newInstance(Dzial.class), name +"%");
     }
 
     //I presume only reading is needed for this entity repository

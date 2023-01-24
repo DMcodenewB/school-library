@@ -24,4 +24,8 @@ public class DzialController {
         return dzialService.getSectionById(sectionId);
     }
 
+    @GetMapping("/search")
+    public List<Dzial> searchByName(@RequestParam String name) {
+        return dzialService.getByNameStart(name);
+    }
 }
