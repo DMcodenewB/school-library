@@ -23,12 +23,12 @@ public class KsiazkaRepository {
                 " rok_wydania," +
                 " okladka," +
                 " czy_lektura" +
-                "FROM ksiazka",
+                " FROM ksiazka",
                 BeanPropertyRowMapper.newInstance(Ksiazka.class));
     }
 
-    public Ksiazka getByISBN(String isbn){
-        return jdbcTemplate.queryForObject("SELECT isbn," +
+    public List<Ksiazka> getByISBN(String isbn){
+        return jdbcTemplate.query("SELECT isbn," +
                 " id_dzial," +
                 " id_autora," +
                 " tytul," +
@@ -36,8 +36,8 @@ public class KsiazkaRepository {
                 " rok_wydania," +
                 " okladka," +
                 " czy_lektura" +
-                "FROM ksiazka WHERE isbn LIKE ?",
-                BeanPropertyRowMapper.newInstance(Ksiazka.class), isbn);
+                " FROM ksiazka WHERE isbn LIKE ?",
+                BeanPropertyRowMapper.newInstance(Ksiazka.class), isbn+"%");
     }
 
     public List<Ksiazka> getByTytul(String tytul){
@@ -49,8 +49,8 @@ public class KsiazkaRepository {
                         " rok_wydania," +
                         " okladka," +
                         " czy_lektura" +
-                        "FROM ksiazka WHERE tytul LIKE ?%",
-                BeanPropertyRowMapper.newInstance(Ksiazka.class), tytul);
+                        " FROM ksiazka WHERE tytul LIKE ?",
+                BeanPropertyRowMapper.newInstance(Ksiazka.class), tytul+"%");
     }
     //KsiazkaRepository does not need more functionality
 

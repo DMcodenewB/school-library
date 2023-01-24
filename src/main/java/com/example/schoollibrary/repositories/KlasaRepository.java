@@ -26,7 +26,7 @@ public class KlasaRepository {
 
     public Klasa getByName(String name){
         return jdbcTemplate.queryForObject("SELECT id_klasa, numer_klasy, profil FROM klasa WHERE numer_klasy LIKE ?",
-                BeanPropertyRowMapper.newInstance(Klasa.class), name);
+                BeanPropertyRowMapper.newInstance(Klasa.class), name + "%");
     }
 
     //KlasaRepository doesn't need more funcionality
