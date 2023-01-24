@@ -20,7 +20,7 @@ public class AutorRepository {
     }
 
     public Autor getById(int id){
-        return jdbcTemplate.queryForObject("SELECT id_autora, imieNazwisko FROM autor WHERE id_autora=?",
+        return jdbcTemplate.queryForObject("SELECT id_autora, imieNazwiskoAutora FROM autor WHERE id_autora=?",
                 BeanPropertyRowMapper.newInstance(Autor.class), id);
     }
 
