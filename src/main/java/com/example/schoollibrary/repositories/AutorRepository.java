@@ -26,7 +26,7 @@ public class AutorRepository {
 
     public List<Autor> getByName(String name) {
         return jdbcTemplate.query("SELECT id_autora, imieNazwiskoAutora FROM autor WHERE imieNazwiskoAutora LIKE ?",
-                BeanPropertyRowMapper.newInstance(Autor.class), name+"%");
+                BeanPropertyRowMapper.newInstance(Autor.class), "%"+name+"%");
     }
 
     public int save(List<Autor> autorzy){
