@@ -22,7 +22,4 @@ public class KsiazkaService {
         return ksiazkaRepository.getByTytul(bookName);
     }
 
-    public List<Ksiazka> getByISBN(String isbn) {
-        return ksiazkaRepository.getByISBN(isbn);
-    }
 }

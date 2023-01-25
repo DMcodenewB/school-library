@@ -26,9 +26,4 @@ public class KsiazkaController {
     public List<Ksiazka> getBookByName(@RequestParam String bookName) {
         return ksiazkaService.getByName(bookName);
     }
-
-    @GetMapping("/search")
-    public List<Ksiazka> getBookByISBN(@RequestParam String isbn){
-        return ksiazkaService.getByISBN(isbn);
-    }
 }

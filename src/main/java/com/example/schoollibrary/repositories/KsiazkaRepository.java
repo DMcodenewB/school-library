@@ -27,19 +27,6 @@ public class KsiazkaRepository {
                 BeanPropertyRowMapper.newInstance(Ksiazka.class));
     }
 
-    public List<Ksiazka> getByISBN(String isbn){
-        return jdbcTemplate.query("SELECT isbn," +
-                " id_dzial," +
-                " id_autora," +
-                " tytul," +
-                " wydawnictwo," +
-                " rok_wydania," +
-                " okladka," +
-                " czy_lektura" +
-                " FROM ksiazka WHERE isbn LIKE ?",
-                BeanPropertyRowMapper.newInstance(Ksiazka.class), isbn+"%");
-    }
-
     public List<Ksiazka> getByTytul(String tytul){
         return jdbcTemplate.query("SELECT isbn," +
                         " id_dzial," +
