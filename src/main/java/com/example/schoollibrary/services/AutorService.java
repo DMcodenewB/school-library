@@ -21,6 +21,10 @@ public class AutorService {
         return autorRepository.getById(id);
     }
 
+    public List<Autor> getAuthorsByName(String name) {
+        return autorRepository.getByName(name);
+    }
+
     public int addAuthors(List<Autor> authors){
         return autorRepository.save(authors);
     }

@@ -24,6 +24,11 @@ public class AutorController {
         return autorService.getAuthorById(id_autora);
     }
 
+    @GetMapping("/search")
+    public List<Autor> getAuthorByName(@RequestParam String name){
+        return autorService.getAuthorsByName(name);
+    }
+
     @PostMapping("")
     public int addAutor(@RequestBody List<Autor> authors){
         return autorService.addAuthors(authors);

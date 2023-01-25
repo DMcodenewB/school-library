@@ -24,6 +24,11 @@ public class AutorRepository {
                 BeanPropertyRowMapper.newInstance(Autor.class), id);
     }
 
+    public List<Autor> getByName(String name) {
+        return jdbcTemplate.query("SELECT id_autora, imieNazwiskoAutora from autor where imieNazwiskoAutora=?",
+                BeanPropertyRowMapper.newInstance(Autor.class), name+"%");
+    }
+
     public int save(List<Autor> autorzy){
         autorzy.forEach(autor -> jdbcTemplate
                 .update("INSERT INTO autor(imieNazwiskoAutora) values (?)",
