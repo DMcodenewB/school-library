@@ -14,6 +14,4 @@ public class Nauczyciel {
     private String haslo;
     private String imie_n;
     private String nazwisko_n;
-    private String przedmiot_glowny;
-    private String przedmiot_poboczny;
 }
