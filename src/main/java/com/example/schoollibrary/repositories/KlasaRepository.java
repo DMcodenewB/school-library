@@ -19,13 +19,8 @@ public class KlasaRepository {
                 BeanPropertyRowMapper.newInstance(Klasa.class));
     }
 
-    public Klasa getById(int id){
-        return jdbcTemplate.queryForObject("SELECT id_klasa, numer_klasy, profil FROM klasa WHERE id_klasa=?",
-                BeanPropertyRowMapper.newInstance(Klasa.class), id);
-    }
-
-    public Klasa getByName(String name){
-        return jdbcTemplate.queryForObject("SELECT id_klasa, numer_klasy, profil FROM klasa WHERE numer_klasy LIKE ?",
+    public List<Klasa> getByName(String name){
+        return jdbcTemplate.query("SELECT id_klasa, numer_klasy, profil FROM klasa WHERE numer_klasy LIKE ?",
                 BeanPropertyRowMapper.newInstance(Klasa.class), name + "%");
     }
 

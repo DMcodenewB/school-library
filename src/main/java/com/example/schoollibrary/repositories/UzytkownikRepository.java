@@ -36,9 +36,4 @@ public class UzytkownikRepository {
         return jdbcTemplate.update("UPDATE uzytkownik SET haslo=? WHERE login LIKE ?",
                 updatedUzytkownikHaslo.getHaslo(), updatedUzytkownikHaslo.getLogin());
     }
-
-    public int delete(String login){
-        return jdbcTemplate.update("DELETE FROM uzytkownik WHERE login LIKE ?",
-                login);
-    }
 }

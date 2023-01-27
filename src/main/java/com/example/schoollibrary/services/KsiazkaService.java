@@ -17,9 +17,7 @@ public class KsiazkaService {
         return ksiazkaRepository.getAll();
     }
 
-
     public List<Ksiazka> getByName(String bookName) {
         return ksiazkaRepository.getByTytul(bookName);
     }
-
 }

@@ -23,7 +23,7 @@ public class KlasaController {
     }
 
     @GetMapping("/search")
-    public Klasa getClassById(@RequestParam String nazwaKlasy){
+    public List<Klasa> getClassByName(@RequestParam String nazwaKlasy){
         return klasaService.getClassByName(nazwaKlasy);
     }
 

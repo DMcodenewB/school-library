@@ -17,7 +17,7 @@ public class KlasaService {
         return klasaRepository.getAll();
     }
 
-    public Klasa getClassByName(String nazwaKlasy){
+    public List<Klasa> getClassByName(String nazwaKlasy){
         return klasaRepository.getByName(nazwaKlasy);
     }
 
